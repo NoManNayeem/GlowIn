@@ -14,7 +14,7 @@ This is a minimal Flask + HTML + Bootstrap + JS Proof-of-Concept integrating Sig
 ### Requirements
 - Python 3.12+
 - Apple Developer account with:
-  - Service ID (`APPLE_CLIENT_ID`, e.g., `com.throwin-glow.com`)
+  - Service ID (`APPLE_CLIENT_ID`, e.g., `com.your-domain.com`)
   - Team ID (`APPLE_TEAM_ID`)
   - Key ID (`APPLE_KEY_ID`)
   - Downloaded `.p8` key placed at `.keys/AuthKey_XXXXXX.p8`
@@ -36,7 +36,7 @@ APPLE_REDIRECT_URI=https://YourSafeDomain.com/redirect
 ```
 
 In Apple Developer → Identifiers → Service IDs, set:
-- Redirect URI: `https://throwin-glow.com/redirect` (must match exactly)
+- Redirect URI: `https://your-domain.com/redirect` (must match exactly)
 - Scopes: `name email`
 
 Place your `.p8` in `.keys/` and update `APPLE_PRIVATE_KEY_PATH` accordingly.
