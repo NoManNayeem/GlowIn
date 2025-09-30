@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Python cache
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info
+
+# Envs
+venv
+.env
+.env.*
+
+# Local-only
+*.log
+*.tar
+.DS_Store
+
+# Keys
+.keys
+*.p8
+*.pem

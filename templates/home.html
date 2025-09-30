@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - GlowIn{% endblock %}
+
+{% block content %}
+<section class="gi-hero text-center">
+  <h1 class="display-6 fw-semibold gi-accent-text">GlowIn Dashboard</h1>
+  <p class="gi-muted mb-4">Your session status and Apple profile</p>
+</section>
+
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="gi-glass rounded-3 p-4">
+      {% if user %}
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div>
+          <h2 class="h5 mb-1">Signed in</h2>
+          <p class="gi-muted mb-0">{{ user.email or user.sub }}</p>
+        </div>
+        <div>
+          <a class="btn btn-outline-light" href="{{ url_for('logout') }}">Log out</a>
+        </div>
+      </div>
+      <hr/>
+      <div>
+        <pre class="code-block p-3 rounded-2"><code>{{ user | tojson(indent=2) }}</code></pre>
+      </div>
+      {% else %}
+      <div class="text-center">
+        <p class="gi-muted mb-3">You are not signed in.</p>
+        <a class="btn gi-apple-btn btn-lg" href="{{ url_for('apple_begin') }}">Sign in with Apple</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+  console.log('Home page loaded', { signedIn: {{ 'true' if user else 'false' }} });
+  {% if user %}
+  console.info('Apple user', {{ user | tojson }});
+  {% endif %}
+</script>
+{% endblock %}
+
+

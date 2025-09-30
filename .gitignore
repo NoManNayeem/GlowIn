@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Environments
+venv/
+.env
+env.txt.local
+.DS_Store
+
+# Keys
+.keys/
+*.p8
+*.pem
+
+# Byte-compiled / logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Docker
+.docker/
+*.tar
+

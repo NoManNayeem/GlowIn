@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign in - GlowIn{% endblock %}
+
+{% block content %}
+<section class="gi-hero text-center">
+  <h1 class="display-6 fw-semibold gi-accent-text">Welcome to GlowIn</h1>
+  <p class="gi-muted mb-4">Secure sign-in powered by Apple</p>
+</section>
+
+<div class="row justify-content-center">
+  <div class="col-md-7 col-lg-6">
+    <div class="gi-glass rounded-3 p-4">
+      <div class="mb-3">
+        <h2 class="h4 mb-1">Sign in</h2>
+        <p class="gi-muted mb-0">Use your Apple ID to continue</p>
+      </div>
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+
+        <div class="d-grid gap-2">
+          <a class="btn gi-apple-btn btn-lg" href="{{ url_for('apple_begin') }}" onclick="console.log('Apple sign-in begin clicked');">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-apple me-2" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M11.182.008c.097 1.1-.324 2.265-1.06 3.062-.716.775-1.872 1.37-2.973 1.29-.122-1.067.416-2.21 1.1-2.938.723-.781 1.965-1.34 2.934-1.414.034 0 .068 0 .1 0z"/>
+              <path d="M14.248 12.969c-.415.902-.608 1.3-1.136 2.101-.738 1.12-1.78 2.52-3.084 2.533-1.157.012-1.526-.745-3.175-.745-1.648 0-2.057.732-3.194.757-1.3.025-2.287-1.204-3.024-2.321C-.177 13.956-.86 11.87.235 10.2c.861-1.345 2.221-2.136 3.501-2.136 1.312 0 2.137.758 3.203.758 1.04 0 1.685-.758 3.2-.758 1.26 0 2.592.692 3.451 1.872-.096.063-2.22 1.311-1.342 3.033z"/>
+            </svg>
+            Sign in with Apple
+          </a>
+        </div>
+
+        <hr class="my-4"/>
+        <p class="gi-muted small text-center mb-0">By continuing, you agree to the Terms and Privacy Policy.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  console.log('Login page loaded', {
+    clientId: '{{ apple_client_id|e }}',
+    redirectURI: '{{ apple_redirect_uri|e }}'
+  });
+</script>
+{% endblock %}
+
+
