@@ -2,6 +2,12 @@
 
 This is a minimal Flask + HTML + Bootstrap + JS Proof-of-Concept integrating Sign in with Apple using the web authorization code flow (response_mode=form_post). It builds a client secret (ES256), exchanges the authorization code for tokens, and verifies the ID token via Apple JWKS.
 
+
+### App Look
+<p align="center">
+  <img src="image.png" alt="Banner" width="800">
+</p>
+
 ### Features
 - Apple OAuth web flow (authorize → token → verify)
 - ES256 client secret generation with `.p8`

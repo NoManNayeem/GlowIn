@@ -5,10 +5,11 @@ __pycache__/
 *.pyd
 *.egg-info/
 .pytest_cache/
-
+.qodo/
 # Environments
 venv/
 .env
+!.env
 env.txt.local
 .DS_Store
 
